@@ -1,26 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>EventBinding</title>
+    <title>TP EventBlinding</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS v5.2.0-beta1 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
-  <body id="user-profile">
-    
-    <h1 class="text-center">EventBindin (gérer les event)</h1>
-    <hr />
-    <div  class="text-center card">
-        
-        <div id="monApp" class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <button v-on:click="minus" type="button" class="btn btn-danger">-</button>
-          <h3 class="mx-3">le nombre :{{num}} </h3>
-          <button v-on:click="plus" type="button" class="btn btn-success">+</button>
-          </div>
-      </div>
+  <body>
+    <h1 class="text-center">TP EventBlinding</h1>
+  <div id="input-test_event-blinding" class="container mt-4 mb-4 p-3">
+    <div class="mb-3">
+        <input v-on:keyup="addTextOnP1($event)" type="text" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <p>{{valeur}}</p>
+    </div>
+    <div class="mb-3">
+        <input v-on:keyup.esc="addTextOnP2($event)" type="text" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <p>{{valeur2}}</p>
+    </div>
+    <button v-on:click="alert($event)" class="btn btn-primary mb-3">Alerte</button>
+</div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
